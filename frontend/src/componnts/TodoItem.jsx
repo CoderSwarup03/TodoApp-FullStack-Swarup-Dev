@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
+import { useTodo } from '../context/TodoProvider';
 
-const TodoItem = ({ todo, deleteTodo, updateTodo }) => {
+const TodoItem = ({ todo }) => {
+    const { updateTodo, deleteTodo } = useTodo();
     const [editModal, setEditModal] = useState(false);
     const [deleteModal, setDeleteModal] = useState(false);
     const [editedTitle, setEditedTitle] = useState(todo.title);

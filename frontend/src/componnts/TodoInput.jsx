@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
+import { useTodo } from '../context/TodoProvider'
 
-const TodoInput = ({ createTodo, todos }) => {
+const TodoInput = () => {
+    const { createTodo, todos } = useTodo();
     const [input, setInput] = useState('')
 
     const handleSubmit = () => {

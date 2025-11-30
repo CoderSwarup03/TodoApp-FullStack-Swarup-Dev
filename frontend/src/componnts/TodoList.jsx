@@ -1,13 +1,15 @@
 import React from 'react'
 import TodoItem from './TodoItem'
+import { useTodo } from '../context/TodoProvider'
 
-const TodoList = ({ todos, deleteTodo, updateTodo }) => {
+const TodoList = () => {
+    const {todos} = useTodo();
     return (
         <>
             <div className='bg-gray-50'>
                 {todos.map((item) => {
                     return (
-                        <TodoItem key={item._id} todo={item} deleteTodo={deleteTodo} updateTodo={updateTodo} />
+                        <TodoItem key={item._id} todo={item}/>
                     )
                 })}
             </div>
